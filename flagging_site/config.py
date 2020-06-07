@@ -32,5 +32,5 @@ class DevelopmentConfig(BaseConfig):
 #     pass
 
 
-# class TestingConfig(BaseConfig):
-#     TESTING: bool = True
+class TestingConfig(BaseConfig):
+    TESTING: bool = True
