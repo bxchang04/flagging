@@ -14,6 +14,10 @@ def app():
     yield app
 
 @pytest.fixture
-def client(app):
-    """A test client for the app."""
-    return app.test_client()
+def client(data):
+    df = pd.read_pickle(get_data_store_file_path('../data/hobolink.py')
+
+# @pytest.fixture
+# def client(app):
+#     """A test client for the app."""
+#     return app.test_client()
