@@ -1,5 +1,5 @@
 import pandas as pd
-import flagging_site.data.model import reach_2_model
+from flagging_site.data.model import reach_2_model
 import pytest
 
 
