@@ -1,17 +1,10 @@
-#first changes from edwin
-
-# tests/test_site.py
-
+import pandas as pd
+import flagging_site.data.model import reach_2_model
 import pytest
-from flask import g
-from flask import session
 
 
-def test_home_page(data):
+def test_model_out_is_bounded(input_data: pd.DataFrame):
     # test that viewing the data renders the data between the values of 0 and 1
-    assert data >= 0 and data <= 1
+    df = reach_2_model(input_data)
+    assert all(0 < i < 1 for i in list(df['r2_sigmoid']))
 
-
-def test_output_model(data):
-    # test that viewing the data renders the data between the values of 0 and 1
-    assert data >= 0 and data <= 1
