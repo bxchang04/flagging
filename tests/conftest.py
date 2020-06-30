@@ -1,13 +1,10 @@
 import os
-
 import pytest
-import pandas as pd
-from flagging_site.data.keys import get_data_store_file_path 
-# init.py makes folder module, and folders inside sub modules
+
 from flagging_site import create_app
 from flagging_site.config import TestingConfig
 
-# if the app fixture is used, make sure it is the first
+
 @pytest.fixture
 def app():
     """Create and configure a new app instance for each test."""
@@ -16,6 +13,7 @@ def app():
 
     app = create_app(config=TestingConfig)
     yield app
+
 
 @pytest.fixture
 def hobolink_data(data):
